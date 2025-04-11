@@ -16,9 +16,6 @@
 #define Base        0
 #define Nav         1
 #define Sym         2
-#define Fun         3
-#define Game        4
-#define Gameplus    5
 
 &mt {
     quick-tap-ms = <100>;
@@ -40,7 +37,7 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <400>;
             quick-tap-ms = <125>;
             global-quick-tap;
             bindings = <&kp>, <&kp>;
@@ -65,10 +62,10 @@
         Nav {
             display-name = "Nav";
             bindings = <
-              &kp TILDE       &trans     &kp UP_ARROW  &trans     &kp LBRC    &kp RBRC  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-              &kp LEFT_SHIFT  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
-&kp LEFT_ALT  &kp LEFT_WIN    &kp MINUS  &trans        &kp PLUS   &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &kp PLUS
-                                         &trans        &trans     &trans      &trans    &trans        &kp DOT
+              &kp NUMBER_0    &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LBRC    &kp RBRC  &kp HOME  &kp UP_ARROW  &kp END    &kp TILDE
+              &kp LEFT_SHIFT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp LBKT    &kp RBKT  &kp LEFT  &kp DOWN      &kp RIGHT  &kp MINUS
+&kp LEFT_ALT  &kp LEFT_WIN    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp LPAR    &kp RPAR  &trans    &trans        &trans     &kp KP_MULTIPLY  &kp PLUS
+                                            &trans        &trans        &trans      &trans    &trans    &kp DOT
             >;
         };
 
@@ -77,10 +74,9 @@
             bindings = <
                 &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp KP_ASTERISK  &kp SQT  &kp DQT
                 &trans    &trans  &trans    &trans      &trans         &trans     &trans         &trans           &trans   &trans
-&studio_unlock  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &kp HOME
+&studio_unlock  &trans    &trans  &trans    &trans      &trans         &kp UNDER  &kp EQUAL      &trans           &trans   &kp SLASH  &trans
                                   &trans    &trans      &trans         &trans     &trans         &trans
             >;
         };
     };
 };
-
