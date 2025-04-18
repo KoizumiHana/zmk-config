@@ -48,58 +48,110 @@
         compatible = "zmk,combos";
 
         WinNav {
-            bindings = <&sl 4>;
+            bindings = <&sl 9>;
             key-positions = <13 16>;
+        };
+
+        to_mac {
+            bindings = <&tog 1>;
+            key-positions = <20 31>;
+            layers = <0>;
+        };
+
+        to_win {
+            bindings = <&tog 0>;
+            key-positions = <20 31>;
+            layers = <1>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        Base {
-            display-name = "Base";
+        Base_win {
+            display-name = "Base_win";
             bindings = <
            &kp Q       &kp W       &kp E         &kp R         &kp T        &kp Y      &kp U        &kp I         &kp O       &kp P
            &hm LGUI A  &hm LALT S  &hm LCTRL D   &hm LSHIFT F  &kp G        &kp H      &hm RSHFT J  &hm RCTRL K   &hm RALT L  &hm RGUI SEMICOLON
 &kp GRAVE  &kp Z       &kp X       &kp C         &kp V         &kp B        &kp N      &kp M        &kp COMMA     &kp DOT     &kp SLASH           &kp SINGLE_QUOTE
-                                   &lt 4 ESCAPE  &lt 1 SPACE   &lt 5 TAB    &kp ENTER  &lt 2 BSPC   &lt 3 DELETE
+                                   &lt 9 ESCAPE  &lt 2 SPACE   &lt 8 TAB    &kp ENTER  &lt 4 BSPC   &lt 6 DELETE
             >;
         };
 
-        Nav {
+        Base_mac {
+            display-name = "Base_mac";
+            bindings = <
+           &kp Q        &kp W           &kp E           &kp R         &kp T        &kp Y      &kp U        &kp I            &kp O       &kp P
+           &hm LCTRL A  &hm LEFT_ALT S  &hm LEFT_GUI D  &hm LSHIFT F  &kp G        &kp H      &hm RSHFT J  &hm RIGHT_GUI K  &hm RALT L  &hm RCTRL SEMICOLON
+&kp GRAVE  &kp Z        &kp X           &kp C           &kp V         &kp B        &kp N      &kp M        &kp COMMA        &kp DOT     &kp SLASH            &kp SINGLE_QUOTE
+                                        &kp ESCAPE      &lt 3 SPACE   &lt 8 TAB    &kp ENTER  &lt 5 BSPC   &lt 7 DELETE
+            >;
+        };
+
+        Nav_win {
             bindings = <
         &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp HOME  &kp UP_ARROW  &kp END          &kp PAGE_UP
         &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp INS
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LEFT_BRACE          &kp RIGHT_BRACE        &trans    &trans        &trans           &kp PAGE_DOWN  &trans
                               &trans     &trans     &trans                  &kp ENTER              &kp BSPC  &kp DEL
             >;
+
+            label = "Nav_win";
         };
 
-        Num {
+        Nav_mac {
+            bindings = <
+        &trans     &trans     &trans        &trans     &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp HOME  &kp UP_ARROW  &kp END          &kp PAGE_UP
+        &kp LCTRL  &kp LALT   &kp LEFT_GUI  &kp LSHFT  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp INS
+&trans  &kp LG(Z)  &kp LG(X)  &kp LG(C)     &kp LG(V)  &kp LEFT_BRACE          &kp RIGHT_BRACE        &trans    &trans        &trans           &kp PAGE_DOWN  &trans
+                              &trans        &trans     &trans                  &kp ENTER              &kp BSPC  &kp DEL
+            >;
+
+            label = "Nav_mac";
+        };
+
+        Num_win {
             bindings = <
         &trans  &kp N7  &kp N8  &kp N9  &kp PLUS     &trans  &trans     &trans     &trans      &trans
         &trans  &kp N4  &kp N5  &kp N6  &kp MINUS    &trans  &kp LSHFT  &kp LCTRL  &kp LALT    &kp LGUI
 &trans  &trans  &kp N1  &kp N2  &kp N3  &kp EQUAL    &trans  &trans     &kp COMMA  &kp PERIOD  &kp BACKSLASH  &trans
                         &trans  &kp N0  &trans       &trans  &trans     &trans
             >;
+
+            label = "Num_win";
         };
 
-        Func {
+        Num_mac {
+            bindings = <
+        &trans  &kp N7  &kp N8  &kp N9  &kp PLUS     &trans  &trans     &trans         &trans      &trans
+        &trans  &kp N4  &kp N5  &kp N6  &kp MINUS    &trans  &kp LSHFT  &kp RIGHT_GUI  &kp LALT    &kp RCTRL
+&trans  &trans  &kp N1  &kp N2  &kp N3  &kp EQUAL    &trans  &trans     &kp COMMA      &kp PERIOD  &kp BACKSLASH  &trans
+                        &trans  &kp N0  &trans       &trans  &trans     &trans
+            >;
+
+            label = " Num_mac";
+        };
+
+        Func_win {
             bindings = <
         &kp F12  &kp F7  &kp F8  &kp F9  &trans    &trans  &trans     &trans     &trans    &trans
         &kp F11  &kp F4  &kp F5  &kp F6  &trans    &trans  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI
 &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans    &trans  &trans     &trans     &trans    &trans    &trans
                          &trans  &trans  &trans    &trans  &trans     &trans
             >;
+
+            label = "Func_win";
         };
 
-        Desk {
+        Func_mac {
             bindings = <
-        &trans  &kp LC(LG(N7))        &kp LC(LG(N8))  &kp LC(LG(N9))  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LC(LG(N4))        &kp LC(LG(N5))  &kp LC(LG(N6))  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(LG(NUMBER_1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                      &trans          &trans          &trans    &trans  &trans  &trans
+        &kp F12  &kp F7  &kp F8  &kp F9  &trans    &trans  &trans     &trans         &trans    &trans
+        &kp F11  &kp F4  &kp F5  &kp F6  &trans    &trans  &kp LSHFT  &kp RIGHT_GUI  &kp LALT  &kp RCTRL
+&trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans    &trans  &trans     &trans         &trans    &trans     &trans
+                         &trans  &trans  &trans    &trans  &trans     &trans
             >;
+
+            label = "Func_mac";
         };
 
         Sym {
@@ -109,6 +161,20 @@
 &trans  &trans  &kp EXCL       &kp AT           &kp HASH   &trans    &trans  &trans  &trans  &trans  &trans  &trans
                                &trans           &trans     &trans    &trans  &trans  &trans
             >;
+
+            label = "Sym";
+        };
+
+        Desk_win {
+            bindings = <
+        &trans  &kp LC(LG(N7))        &kp LC(LG(N8))  &kp LC(LG(N9))  &trans    &trans  &trans  &trans  &trans  &trans
+        &trans  &kp LC(LG(N4))        &kp LC(LG(N5))  &kp LC(LG(N6))  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(LG(NUMBER_1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans          &trans          &trans    &trans  &trans  &trans
+            >;
+
+            label = "Desk_win";
         };
     };
 };
+
