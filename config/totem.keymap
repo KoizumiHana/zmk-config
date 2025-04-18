@@ -52,16 +52,9 @@
             key-positions = <13 16>;
         };
 
-        to_mac {
+        toggle_mac {
             bindings = <&tog 1>;
             key-positions = <20 31>;
-            layers = <0>;
-        };
-
-        to_win {
-            bindings = <&tog 0>;
-            key-positions = <20 31>;
-            layers = <1>;
         };
     };
 
@@ -177,4 +170,3 @@
         };
     };
 };
-
