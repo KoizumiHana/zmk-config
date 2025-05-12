@@ -11,7 +11,9 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define Base        0
 #define Nav         1
@@ -160,10 +162,10 @@
 
         Desk_win {
             bindings = <
-        &trans  &kp LC(LG(N7))        &kp LC(LG(N8))  &kp LC(LG(N9))  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &kp LC(LG(N4))        &kp LC(LG(N5))  &kp LC(LG(N6))  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(LG(NUMBER_1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                      &trans          &trans          &trans    &trans  &trans  &trans
+        &trans  &kp LC(LG(N7))        &kp LC(LG(N8))  &kp LC(LG(N9))  &trans    &sys_reset    &trans      &bt BT_CLR  &trans  &trans
+        &trans  &kp LC(LG(N4))        &kp LC(LG(N5))  &kp LC(LG(N6))  &trans    &bootloader   &bt BT_NXT  &bt BT_PRV  &trans  &trans
+&trans  &trans  &kp LC(LG(NUMBER_1))  &kp LC(LG(N2))  &kp LC(LG(N3))  &trans    &out OUT_TOG  &trans      &trans      &trans  &trans  &trans
+                                      &trans          &trans          &trans    &trans        &trans      &trans
             >;
 
             label = "Desk_win";
